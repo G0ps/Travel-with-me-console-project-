@@ -1,0 +1,31 @@
+===================================================================================================================================
+
+#ifndef login_credentials_H
+#define login_credentials_H
+
+#include<bits/stdc++.h>
+
+using namespace std;
+namespace login_credentials
+{   
+    class login_credentials{
+            public:
+            login_credentials(){}
+        };
+}
+#endif
+
+===================================================================================================================================
+
+// input clean where ever you use int input
+
+===================================================================================================================================
+
+if (!(cin >> option)) {  // Input validation
+                cin.clear();
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                cout << "Invalid input! Please enter a number." << endl;
+                continue;
+            }
+
+===================================================================================================================================
