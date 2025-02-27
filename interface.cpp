@@ -8,7 +8,6 @@ using namespace std;
 #include "login/login.h"
 
 
-
 int main()
     {
         //rebuilding credentials
@@ -40,7 +39,6 @@ int main()
             {
                 login::login l;
             }
-
         }while(option != 3);
         cout << "\n\t   <== THANKS FOR USING OUR APPLICATION ==>";
         //updating credentials
