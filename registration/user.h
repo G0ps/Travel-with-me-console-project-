@@ -11,6 +11,13 @@ namespace user
             string name;
             string mobile_number; // alias id
             string user_type = "user";
+            
+            //for premium user
+            int points = 0;
+            
+            //for bus owners
+            
+
             public:
             
             user(){}

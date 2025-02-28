@@ -19,6 +19,7 @@ namespace login
                     string mobile_number;
                     string verification_password = "";
                     int option = -1;
+                    tuple<string,string,string> kt;
                     while(option != 1)
                     {
                         cout << "\tEnter a valid mobile number : ";
@@ -27,6 +28,7 @@ namespace login
                         cin.clear();
                         cin.ignore(numeric_limits<streamsize>::max(), '\n');
                         auto it = credentials::login_credentials::get_specific_data_as_copy(mobile_number);
+                        kt = it;
                         if(get<0>(it) != "-1")
                         {
                             verification_password = get<1>(it);
@@ -47,7 +49,8 @@ namespace login
                         cin.ignore(numeric_limits<streamsize>::max(), '\n');
                         if(password == verification_password)
                         {
-                            cout << "logged in\n";
+                            application::application a;
+                            a.run(kt);
                             break;
                         }
                         cout << "\t Enter 1 to exit or 2 to retry : ";

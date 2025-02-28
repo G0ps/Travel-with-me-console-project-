@@ -47,13 +47,20 @@ namespace registration{
             string name;
             string mobile_number;
 
-            cout << "\tEnter name : ";
-            cin >> name;
-            cin.clear();
-            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            do {
+                cout << "\tEnter name : ";
+                cin >> name;
+                cin.clear();
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            } while(name.find_first_not_of("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ") != string::npos);
+            
 
-            cout << "\tEnter mobile number : ";
-            cin >> mobile_number;
+            do{
+                cout << "\tEnter valid mobile number : ";
+                cin >> mobile_number;
+            } while(mobile_number.length() != 10 || mobile_number.find_first_not_of("0123456789") != string::npos || get<0>(credentials::login_credentials::get_specific_data_as_copy(mobile_number)) != "-1");
+            
+            
             cin.clear();
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
